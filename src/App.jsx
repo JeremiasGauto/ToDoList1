@@ -7,15 +7,15 @@ import { useState } from "react";
 import TaskItem from "./components/TaskItem";
 
 function App() {
-  const [tasks, taskList] = useState(["alberto", "martin"]);
+  const [tasks, setTasks] = useState([]);
 
   return (
     <>
       <div className=" bg-slate-500/20 h-screen ">
-        <TaskForm />
+        <TaskForm tasks={tasks} setTasks={setTasks} />
         <TaskList />
-        {tasks.map((t) => {
-          return <TaskItem key={[t]} tarea={t} />
+        {tasks.map((task) => {
+          <TaskItem key={task.id} task={task} />;
         })}
       </div>
 

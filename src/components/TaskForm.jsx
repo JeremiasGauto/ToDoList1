@@ -1,9 +1,37 @@
-import React from 'react'
+import React, { useState } from "react";
 
-function TaskForm() {
+function TaskForm({ tasks, setTasks }) {
+  const [name, setName] = useState("");
+
+  const clear = () => {
+    setName("");
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    const nuevaTarea = {
+      name,
+    };
+
+    setTasks([...tasks, nuevaTarea]);
+    clear();
+  };
+
   return (
-    <div>TaskForm</div>
-  )
+    <div>
+      <form action="" onSubmit={handleSubmit}>
+        <input
+          type="text"
+          value={name}
+          onChange={(e) => {
+            setName(e.target.value);
+          }}
+        />
+        <input type="submit" />
+      </form>
+    </div>
+  );
 }
 
-export default TaskForm
+export default TaskForm;
