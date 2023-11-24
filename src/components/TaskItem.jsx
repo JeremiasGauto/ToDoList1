@@ -1,8 +1,10 @@
 import React from 'react'
 
-function TaskItem() {
+function TaskItem({ tarea }) {
+  
+
   return (
-    <div>TaskItem</div>
+    <div>{tarea}</div>
   )
 }
 
