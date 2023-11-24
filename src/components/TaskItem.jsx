@@ -1,11 +1,7 @@
 import React from 'react'
 
-function TaskItem({ tarea }) {
-  
-
-  return (
-    <div>{tarea}</div>
-  )
+function TaskItem({ tarea, task }) {
+  return <h1>{task.name}</h1>;
 }
 
 export default TaskItem

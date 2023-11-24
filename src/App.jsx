@@ -13,10 +13,9 @@ function App() {
     <>
       <div className=" bg-slate-500/20 h-screen ">
         <TaskForm tasks={tasks} setTasks={setTasks} />
-        <TaskList />
-        {tasks.map((task) => {
-          <TaskItem key={task.id} task={task} />;
-        })}
+        <TaskList tasks={tasks} />
+
+        <div></div>
       </div>
 
       <ToastContainer />
