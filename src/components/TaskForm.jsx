@@ -10,8 +10,11 @@ function TaskForm({ tasks, setTasks }) {
   const handleSubmit = (e) => {
     e.preventDefault();
 
+    const randomId = (Math.random() + Date.now()).toString(36);
+
     const nuevaTarea = {
       name,
+      id: randomId,
     };
 
     setTasks([...tasks, nuevaTarea]);

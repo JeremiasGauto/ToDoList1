@@ -13,7 +13,7 @@ function App() {
     <>
       <div className=" bg-slate-500/20 h-screen ">
         <TaskForm tasks={tasks} setTasks={setTasks} />
-        <TaskList tasks={tasks} />
+        <TaskList tasks={tasks} setTasks={setTasks} />
 
         <div></div>
       </div>
