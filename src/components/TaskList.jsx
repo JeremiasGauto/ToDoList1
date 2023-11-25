@@ -1,7 +1,7 @@
 import React from "react";
 import TaskItem from "./TaskItem";
 
-function TaskList({ tasks, setTasks, setTarea }) {
+function TaskList({ tasks, setTasks, setTarea, tarea }) {
   return (
     <div>
       {tasks.map((task) => {
@@ -12,6 +12,7 @@ function TaskList({ tasks, setTasks, setTarea }) {
             tasks={tasks}
             setTasks={setTasks}
             setTarea={setTarea}
+            tarea={tarea}
           />
         );
       })}

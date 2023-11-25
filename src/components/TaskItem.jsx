@@ -1,6 +1,7 @@
 import React from "react";
 
 function TaskItem({ tarea, task, tasks, setTasks, setTarea }) {
+
   const handleDelete = () => {
     const tareasFiltradas = tasks.filter((tarea) => {
       if (tarea.id !== task.id) {
@@ -13,6 +14,7 @@ function TaskItem({ tarea, task, tasks, setTasks, setTarea }) {
 
   const handleEdit = () => {
     setTarea(task);
+    
   };
 
   return (
@@ -27,6 +29,7 @@ function TaskItem({ tarea, task, tasks, setTasks, setTarea }) {
             className="material-symbols-outlined bg-indigo-700 text-fuchsia-50 m-2 rounded-sm"
             onClick={handleEdit}
           >
+            
             edit_note
           </span>
         </button>

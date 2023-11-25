@@ -13,8 +13,18 @@ function App() {
   return (
     <>
       <div className=" bg-slate-500/20 h-screen ">
-        <TaskForm tasks={tasks} setTasks={setTasks} tarea={tarea} />
-        <TaskList tasks={tasks} setTasks={setTasks} setTarea={setTarea} />
+        <TaskForm
+          tasks={tasks}
+          setTasks={setTasks}
+          tarea={tarea}
+          setTarea={setTarea}
+        />
+        <TaskList
+          tasks={tasks}
+          setTasks={setTasks}
+          setTarea={setTarea}
+          tarea={tarea}
+        />
 
         <div></div>
       </div>
