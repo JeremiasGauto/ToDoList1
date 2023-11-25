@@ -7,8 +7,8 @@ function TaskList({ tasks, setTasks, setTarea, tarea }) {
       {tasks.map((task) => {
         return (
           <TaskItem
-            task={task}
             key={task.id}
+            task={task}
             tasks={tasks}
             setTasks={setTasks}
             setTarea={setTarea}

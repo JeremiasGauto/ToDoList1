@@ -10,10 +10,7 @@ function TaskForm({ tasks, setTasks, tarea, setTarea }) {
     }
   }, [tarea]);
 
-  const clear = () => {
-    setName("");
-    setTarea({});
-  };
+  const randomId = (Math.random() + Date.now()).toString(36);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -23,24 +20,26 @@ function TaskForm({ tasks, setTasks, tarea, setTarea }) {
       return;
     }
 
-    const randomId = (Math.random() + Date.now()).toString(36);
-
     const nuevaTarea = {
       name,
     };
 
     if (tarea.id) {
-      nuevaTarea.id = name.id;
+      //editando registro
+      nuevaTarea.id = tarea.id;
       const tareasActualizadas = tasks.map((tareaState) =>
         tareaState.id === tarea.id ? nuevaTarea : tareaState
       );
 
       setTasks(tareasActualizadas);
+      setTarea({});
     } else {
+      //nuevo registro
       nuevaTarea.id = randomId;
       setTasks([...tasks, nuevaTarea]);
     }
-    clear();
+    setName("");
+    setTarea({});
   };
 
   return (

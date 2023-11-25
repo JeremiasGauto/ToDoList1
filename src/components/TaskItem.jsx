@@ -1,6 +1,6 @@
 import React from "react";
 
-function TaskItem({ tarea, task, tasks, setTasks, setTarea }) {
+function TaskItem({ task, tasks, setTasks, setTarea }) {
 
   const handleDelete = () => {
     const tareasFiltradas = tasks.filter((tarea) => {
