@@ -23,13 +23,21 @@ function TaskItem({ task, tasks, setTasks, setTarea }) {
 
 
   const handleDone = () => {
-    setDone(true);
-  } 
+    setDone(true);      
+    localStorage.setItem("Done", JSON.stringify(tasks));
+    } 
 
-  const bgDone = "flex justify-between  bg-green-800 rounded-lg  m-2 line-through font-bold"
+  const datosLocalStorage = JSON.parse(localStorage.getItem("tasks")) ?? [];
+  if (datosLocalStorage) {
+     
+   }
+
+
+  const bgDone =
+    "flex justify-between  bg-green-800 rounded-lg  m-2 line-through font-bold text-gray-400 ";
     
   
-  const comun = "flex justify-between  bg-slate-200 rounded-lg font-bold  m-2";
+  const comun =  "flex justify-between  bg-slate-200 rounded-lg font-bold text-gray-700 m-2";
 
   return (
     <MagicMotion>
