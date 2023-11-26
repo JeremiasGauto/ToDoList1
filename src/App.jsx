@@ -12,21 +12,26 @@ function App() {
 
   return (
     <>
-      <div className=" bg-slate-500/20 h-screen ">
-        <TaskForm
-          tasks={tasks}
-          setTasks={setTasks}
-          tarea={tarea}
-          setTarea={setTarea}
-        />
-        <TaskList
-          tasks={tasks}
-          setTasks={setTasks}
-          setTarea={setTarea}
-          tarea={tarea}
-        />
+      <div className=" bg-gradient-to-r from-indigo-900 via-purple-500 to-pink-500 h-screen flex justify-center flex-col">
+        <div className="flex justify-center">
+          <TaskForm
+            tasks={tasks}
+            setTasks={setTasks}
+            tarea={tarea}
+            setTarea={setTarea}
+          />
+        </div>
 
-        <div></div>
+        <div className=" bg-gradient-to-r from-indigo-900 via-purple-500 to-pink-500 flex flex-col">
+          <div className="flex justify-center">
+            <TaskList
+              tasks={tasks}
+              setTasks={setTasks}
+              setTarea={setTarea}
+              tarea={tarea}
+            />
+          </div>
+        </div>
       </div>
 
       <ToastContainer />

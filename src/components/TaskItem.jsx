@@ -18,7 +18,7 @@ function TaskItem({ task, tasks, setTasks, setTarea }) {
   };
 
   return (
-    <div className="flex justify-between bg-slate-400 rounded-lg lg:w-64 m-2">
+    <div className="flex justify-between bg-slate-400 rounded-lg  m-2">
       <div>
         <h1 className=" m-2">{task.name}</h1>
       </div>
@@ -26,17 +26,16 @@ function TaskItem({ task, tasks, setTasks, setTarea }) {
       <div>
         <button>
           <span
-            className="material-symbols-outlined bg-indigo-700 text-fuchsia-50 m-2 rounded-sm"
+            className="material-symbols-outlined bg-indigo-700 text-fuchsia-50 m-2 rounded-sm p-2"
             onClick={handleEdit}
           >
-            
             edit_note
           </span>
         </button>
 
         <button>
           <span
-            className="material-symbols-outlined  bg-red-700 text-fuchsia-50 m-2 rounded-sm"
+            className="material-symbols-outlined  bg-red-700 text-fuchsia-50 m-2 rounded-md p-2"
             onClick={handleDelete}
           >
             delete

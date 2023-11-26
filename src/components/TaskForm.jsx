@@ -1,5 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { toast } from "react-toastify";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faPlus } from "@fortawesome/free-solid-svg-icons";
+
 
 function TaskForm({ tasks, setTasks, tarea, setTarea }) {
   const [name, setName] = useState("");
@@ -50,7 +53,7 @@ function TaskForm({ tasks, setTasks, tarea, setTarea }) {
         className="flex justify-between items-center bg-blue-600 rounded-lg lg:w-64 m-2"
       >
         <input
-          className="m-2 w-full rounded-sm"
+          className="m-2 w-full h-full rounded-sm"
           type="text"
           value={name}
           onChange={(e) => {
@@ -58,13 +61,11 @@ function TaskForm({ tasks, setTasks, tarea, setTarea }) {
           }}
         />
         <div>
-          <button>
-            <span className=" text-slate-50 font-bold m-3">
-              {tarea.id ? "Editar" : "Agregar"}
-            </span>
-            <span className="material-symbols-outlined bg-slate-300 rounded-lg m-2">
-              add
-            </span>
+          <button className=" text-slate-50 font-bold bg-slate-300 rounded-lg m-2 p-3">
+            <FontAwesomeIcon icon={faPlus} />
+            {tarea.id ? "Editar" : "agregar"}
+
+            
           </button>
         </div>
       </form>
