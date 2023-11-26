@@ -26,10 +26,10 @@ function TaskItem({ task, tasks, setTasks, setTarea }) {
     setDone(true);
   } 
 
-  const bgDone = "flex justify-between  bg-green-800 rounded-lg  m-2 line-through"
+  const bgDone = "flex justify-between  bg-green-800 rounded-lg  m-2 line-through font-bold"
     
   
-  const comun = "flex justify-between  bg-slate-200 rounded-lg  m-2";
+  const comun = "flex justify-between  bg-slate-200 rounded-lg font-bold  m-2";
 
   return (
     <MagicMotion>

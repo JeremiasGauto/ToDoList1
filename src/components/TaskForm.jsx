@@ -3,7 +3,6 @@ import { toast } from "react-toastify";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlus } from "@fortawesome/free-solid-svg-icons";
 
-
 function TaskForm({ tasks, setTasks, tarea, setTarea }) {
   const [name, setName] = useState("");
 
@@ -36,12 +35,13 @@ function TaskForm({ tasks, setTasks, tarea, setTarea }) {
 
       setTasks(tareasActualizadas);
       setTarea({});
-      toast.info('Tarea actualizada')
+      toast.info("Tarea actualizada");
     } else {
       //nuevo registro
       nuevaTarea.id = randomId;
       setTasks([...tasks, nuevaTarea]);
-      toast.success('Tarea añadida')
+      
+      toast.success("Tarea añadida");
     }
     setName("");
     setTarea({});
