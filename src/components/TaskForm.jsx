@@ -49,13 +49,10 @@ function TaskForm({ tasks, setTasks, tarea, setTarea }) {
 
   return (
     <div className="">
-      <div>
-        <h1 className="text-center font-bold text-8xl my-9">ToDoList</h1>
-      </div>
       <form
         action=""
         onSubmit={handleSubmit}
-        className="flex justify-between items-center bg-blue-600 rounded-lg lg:w-64 m-2"
+        className="flex justify-between items-center bg-blue-600 rounded-lg lg:w-92 m-2"
       >
         <input
           className="m-2 w-full h-full rounded-sm"
@@ -66,11 +63,9 @@ function TaskForm({ tasks, setTasks, tarea, setTarea }) {
           }}
         />
         <div>
-          <button className=" text-slate-50 font-bold bg-slate-300 rounded-lg m-2 p-3">
+          <button className=" text-slate-50 font-bold bg-blue-900 hover:bg-blue-950 rounded-lg m-2 p-3">
             <FontAwesomeIcon icon={faPlus} />
             {tarea.id ? "Editar" : "agregar"}
-
-            
           </button>
         </div>
       </form>

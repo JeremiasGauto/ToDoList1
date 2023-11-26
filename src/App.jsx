@@ -4,7 +4,8 @@ import "react-toastify/dist/ReactToastify.css";
 import TaskForm from "./components/TaskForm";
 import TaskList from "./components/TaskList";
 import { useState } from "react";
-import TaskItem from "./components/TaskItem";
+import Header from "./components/Header";
+import { MagicMotion } from "react-magic-motion";
 
 function App() {
   const [tasks, setTasks] = useState([]);
@@ -12,7 +13,9 @@ function App() {
 
   return (
     <>
-      <div className=" bg-gradient-to-r from-indigo-900 via-purple-500 to-pink-500 h-screen flex justify-center flex-col">
+      
+      <div className=" bg-gradient-to-r from-indigo-900 via-purple-500 to-pink-500 h-screen flex justify-center flex-col font-sans">
+        <Header />
         <div className="flex justify-center">
           <TaskForm
             tasks={tasks}
