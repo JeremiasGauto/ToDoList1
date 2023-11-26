@@ -36,10 +36,12 @@ function TaskForm({ tasks, setTasks, tarea, setTarea }) {
 
       setTasks(tareasActualizadas);
       setTarea({});
+      toast.info('Tarea actualizada')
     } else {
       //nuevo registro
       nuevaTarea.id = randomId;
       setTasks([...tasks, nuevaTarea]);
+      toast.success('Tarea añadida')
     }
     setName("");
     setTarea({});
@@ -47,6 +49,9 @@ function TaskForm({ tasks, setTasks, tarea, setTarea }) {
 
   return (
     <div className="">
+      <div>
+        <h1 className="text-center font-bold text-8xl my-9">ToDoList</h1>
+      </div>
       <form
         action=""
         onSubmit={handleSubmit}
