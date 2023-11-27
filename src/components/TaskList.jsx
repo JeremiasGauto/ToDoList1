@@ -2,7 +2,7 @@ import React from "react";
 import TaskItem from "./TaskItem";
 import { MagicMotion } from "react-magic-motion";
 
-function TaskList({ tasks, setTasks, setTarea, tarea }) {
+function TaskList({ tasks, setTasks, setTarea, tarea, setCompletado }) {
   return (
     <div>
       {tasks.map((task) => {
@@ -14,6 +14,7 @@ function TaskList({ tasks, setTasks, setTarea, tarea }) {
             setTasks={setTasks}
             setTarea={setTarea}
             tarea={tarea}
+            setCompletado={setCompletado}
           />
         );
       })}

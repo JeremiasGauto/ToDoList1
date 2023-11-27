@@ -5,6 +5,8 @@ import { faPlus } from "@fortawesome/free-solid-svg-icons";
 
 function TaskForm({ tasks, setTasks, tarea, setTarea }) {
   const [name, setName] = useState("");
+  const [completado, setCompletado] = useState(false);
+  const [fecha, setFecha] = useState(Date.now);
 
   useEffect(() => {
     if (Object.keys(tarea).length > 0) {
@@ -22,9 +24,22 @@ function TaskForm({ tasks, setTasks, tarea, setTarea }) {
       return;
     }
 
+    const formatearFecha = (fecha) => {
+      const fechaNueva = new Date(fecha);
+      const opciones = {
+        year: "numeric",
+        month: "short",
+        day: "2-digit",
+      };
+      return fechaNueva.toLocaleDateString("us-US", opciones);
+    };
+
     const nuevaTarea = {
       name,
+      completado,
+      fecha: formatearFecha(fecha)
     };
+    
 
     if (tarea.id) {
       //editando registro
@@ -40,11 +55,12 @@ function TaskForm({ tasks, setTasks, tarea, setTarea }) {
       //nuevo registro
       nuevaTarea.id = randomId;
       setTasks([...tasks, nuevaTarea]);
-      
+
       toast.success("Tarea añadida");
     }
     setName("");
     setTarea({});
+    setCompletado(false);
   };
 
   return (

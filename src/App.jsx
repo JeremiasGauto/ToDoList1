@@ -10,14 +10,15 @@ import { MagicMotion } from "react-magic-motion";
 function App() {
   const [tasks, setTasks] = useState([]);
   const [tarea, setTarea] = useState({});
+  const [completado, setCompletado] = useState(false);
 
-    useEffect(() => {
-      const obtenerLS = () => {
-        const tareasLS = JSON.parse(localStorage.getItem("tasks")) ?? [];
-        setTasks(tareasLS);
-      };
-      obtenerLS();
-    }, []);
+  useEffect(() => {
+    const obtenerLS = () => {
+      const tareasLS = JSON.parse(localStorage.getItem("tasks")) ?? [];
+      setTasks(tareasLS);
+    };
+    obtenerLS();
+  }, []);
 
   useEffect(() => {
     localStorage.setItem("tasks", JSON.stringify(tasks));
@@ -43,6 +44,7 @@ function App() {
               setTasks={setTasks}
               setTarea={setTarea}
               tarea={tarea}
+              setCompletado={setCompletado}
             />
           </div>
         </div>
