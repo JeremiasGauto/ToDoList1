@@ -33,11 +33,12 @@ function TaskItem({ task, tasks, setTasks, setTarea, setCompletado }) {
    };
 
   
-  const comun = "flex justify-between  bg-slate-200 rounded-lg font-bold text-gray-700 m-2 backdrop-blur-sm bg-white/50 w-full";
+  const comun =
+    "flex justify-between  bg-slate-200 rounded-lg font-bold text-gray-700 m-2 backdrop-blur-sm bg-white/50 max-w-md";
   
 
   const bgDone =
-    "flex justify-between  bg-green-800 rounded-lg  m-2 line-through font-bold text-gray-400 backdrop-blur-sm bg-green/90 w-full ease-in duration-200";
+    "flex justify-between  bg-green-800 rounded-lg  m-2 line-through font-bold text-gray-400 backdrop-blur-sm bg-green/90 w-full ease-in duration-200 max-w-md";
   
 
   
@@ -47,15 +48,18 @@ function TaskItem({ task, tasks, setTasks, setTarea, setCompletado }) {
       <div className={task.completado ? bgDone : comun}>
         <p className=" m-4 h-full w-44 border-e-2">{task.name}</p>
 
-        <p className=" text-xs text-blue-900  mt-6">
-          <span className="font-bold text-gray-700 mr-1 "> Fecha: </span>
+        <p className=" flex text-xs text-blue-900  m-4">
+          <span className="font-bold text-gray-700 text-xs mr-1 flex whitespace-nowrap">
+            {" "}
+            Fecha:{" "}
+          </span>
           {task.fecha}
         </p>
 
-        <div>
+        <div className="flex">
           <button>
             <span
-              className="material-symbols-outlined bg-green-600 hover:bg-green-900 text-fuchsia-50 m-4 rounded-md p-2"
+              className="material-symbols-outlined bg-green-600 hover:bg-green-900 text-fuchsia-50 m-2 rounded-md p-2"
               onClick={handleDone}
             >
               done
