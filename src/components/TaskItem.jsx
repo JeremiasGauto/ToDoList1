@@ -34,11 +34,11 @@ function TaskItem({ task, tasks, setTasks, setTarea, setCompletado }) {
 
   
   const comun =
-    "flex justify-between  bg-slate-200 rounded-lg font-bold text-gray-700 m-2 backdrop-blur-sm bg-white/50 max-w-md";
+    " grid grid-cols-3 grow-0 gap-x-2 bg-slate-200 rounded-lg font-bold text-gray-900 m-2 backdrop-blur-sm bg-white/50 w-80% break-all text-xs md:text-xl  overflow-hidden px-4";
   
 
   const bgDone =
-    "flex justify-between  bg-green-800 rounded-lg  m-2 line-through font-bold text-gray-400 backdrop-blur-sm bg-green/90 w-full ease-in duration-200 max-w-md";
+    " grid grid-cols-3 grow-0 bg-green-900 rounded-lg  m-2 line-through font-bold text-gray-900 backdrop-blur-xl opacity-80 w-80%  text-xs ease-in duration-200 overflow-hidden px-4 md:text-xl";
   
 
   
@@ -46,20 +46,21 @@ function TaskItem({ task, tasks, setTasks, setTarea, setCompletado }) {
   return (
     <MagicMotion>
       <div className={task.completado ? bgDone : comun}>
-        <p className=" m-4 h-full w-44 border-e-2">{task.name}</p>
-
-        <p className=" flex text-xs text-blue-900  m-4">
-          <span className="font-bold text-gray-700 text-xs mr-1 flex whitespace-nowrap">
+        <p className="grid justify-items-start items-center break-all  overflow-hidden w-80% p-1 grow-0">
+          {task.name}
+        </p>
+        <p className="text-xs text-blue-900 grid justify-items-center items-center break-all overflow-hidden w-80% grow-1 ">
+          <span className="font-bold text-gray-700 text-xs w-80%">
             {" "}
             Fecha:{" "}
           </span>
           {task.fecha}
         </p>
 
-        <div className="flex">
+        <div className="flex justify-end  w-80% grow-0">
           <button>
             <span
-              className="material-symbols-outlined bg-green-600 hover:bg-green-900 text-fuchsia-50 m-2 rounded-md p-2"
+              className="material-symbols-outlined bg-green-600 hover:bg-green-900 text-fuchsia-50 m-2 rounded-md p-2 w-80% text-xs md:text-xl"
               onClick={handleDone}
             >
               done
@@ -68,7 +69,7 @@ function TaskItem({ task, tasks, setTasks, setTarea, setCompletado }) {
 
           <button>
             <span
-              className="material-symbols-outlined bg-indigo-700 hover:bg-indigo-900 text-fuchsia-50 m-2 rounded-sm p-2"
+              className="material-symbols-outlined bg-indigo-700 hover:bg-indigo-900 text-fuchsia-50 m-2 rounded-sm p-2 w-80% text-xs md:text-xl"
               onClick={handleEdit}
             >
               edit_note
@@ -77,7 +78,7 @@ function TaskItem({ task, tasks, setTasks, setTarea, setCompletado }) {
 
           <button>
             <span
-              className="material-symbols-outlined  bg-red-700 hover:bg-red-900 text-fuchsia-50 m-2 rounded-md p-2"
+              className="material-symbols-outlined  bg-red-700 hover:bg-red-900 text-fuchsia-50 m-2 rounded-md p-2 w-80% text-xs md:text-xl"
               onClick={handleDelete}
             >
               delete
