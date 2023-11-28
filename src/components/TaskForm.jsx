@@ -27,19 +27,18 @@ function TaskForm({ tasks, setTasks, tarea, setTarea }) {
     const formatearFecha = (fecha) => {
       const fechaNueva = new Date(fecha);
       const opciones = {
-        year: "numeric",
-        month: "short",
+        year: "2-digit",
+        month: "numeric",
         day: "2-digit",
       };
-      return fechaNueva.toLocaleDateString("us-US", opciones);
+      return fechaNueva.toLocaleDateString("en-GB", opciones);
     };
 
     const nuevaTarea = {
       name,
       completado,
-      fecha: formatearFecha(fecha)
+      fecha: formatearFecha(fecha),
     };
-    
 
     if (tarea.id) {
       //editando registro

@@ -49,15 +49,15 @@ function TaskItem({ task, tasks, setTasks, setTarea, setCompletado }) {
         <p className="grid justify-items-start items-center break-all  overflow-hidden w-80% p-1 ">
           {task.name}
         </p>
-        <p className=" text-blue-900 grid justify-items-center items-center break-all overflow-hidden w-80% ">
-          <span className="font-bold text-blue-900 text-xs w-80%">
+        <p className=" text-blue-900 grid justify-items-center items-center break-all overflow-hidden w-14">
+          <span className="font-bold text-blue-900 text-xs break-all w-80% overflow-hidden w-14">
             {" "}
             Fecha:{" "}
           </span>
           {task.fecha}
         </p>
 
-        <div className="flex justify-end  w-80% ">
+        <div className="flex justify-end  text-xs w-80% ">
           <button>
             <span
               className="material-symbols-outlined bg-green-600 hover:bg-green-900 text-fuchsia-50 m-2 rounded-md p-2 w-80% text-xs md:text-xl"
