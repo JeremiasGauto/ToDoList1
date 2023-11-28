@@ -34,11 +34,11 @@ function TaskItem({ task, tasks, setTasks, setTarea, setCompletado }) {
 
   
   const comun =
-    " grid grid-cols-3 grow-0 gap-x-2 bg-slate-200 rounded-lg font-bold text-gray-900 m-2 backdrop-blur-sm bg-white/50 w-80% break-all text-xs md:text-xl  overflow-hidden px-4";
+    " grid grid-cols-3  gap-x-2 bg-slate-200 rounded-lg font-bold text-gray-800 m-2 backdrop-blur-sm bg-white/50 w-80% break-all text-xs md:text-xl  overflow-hidden px-4";
   
 
   const bgDone =
-    " grid grid-cols-3 grow-0 bg-green-900 rounded-lg  m-2 line-through font-bold text-gray-900 backdrop-blur-xl opacity-80 w-80%  text-xs ease-in duration-200 overflow-hidden px-4 md:text-xl";
+    " grid grid-cols-3  bg-green-900 rounded-lg  m-2 line-through font-bold text-gray-900 backdrop-blur-xl opacity-80 w-80%  text-xs ease-in duration-200 overflow-hidden px-4 md:text-xl";
   
 
   
@@ -46,18 +46,18 @@ function TaskItem({ task, tasks, setTasks, setTarea, setCompletado }) {
   return (
     <MagicMotion>
       <div className={task.completado ? bgDone : comun}>
-        <p className="grid justify-items-start items-center break-all  overflow-hidden w-80% p-1 grow-0">
+        <p className="grid justify-items-start items-center break-all  overflow-hidden w-80% p-1 ">
           {task.name}
         </p>
-        <p className="text-xs text-blue-900 grid justify-items-center items-center break-all overflow-hidden w-80% grow-1 ">
-          <span className="font-bold text-gray-700 text-xs w-80%">
+        <p className=" text-blue-900 grid justify-items-center items-center break-all overflow-hidden w-80% ">
+          <span className="font-bold text-blue-900 text-xs w-80%">
             {" "}
             Fecha:{" "}
           </span>
           {task.fecha}
         </p>
 
-        <div className="flex justify-end  w-80% grow-0">
+        <div className="flex justify-end  w-80% ">
           <button>
             <span
               className="material-symbols-outlined bg-green-600 hover:bg-green-900 text-fuchsia-50 m-2 rounded-md p-2 w-80% text-xs md:text-xl"
